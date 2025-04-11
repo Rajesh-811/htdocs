@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Festava Live - Ticket HTML Form</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/templatemo-festava-live.css" rel="stylesheet">
+    <!--
+
+TemplateMo 583 Festava Live
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+
+</head>
+
+<body>
+
+    <main>
+
+        <header id="header" class="header d-flex align-items-center fixed-top">
+            <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        
+              <a href="/home_page/index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="/home_page/assets/img/logo-removebg-preview.png" alt="Logo"
+                style="width: 120px; height: auto; display: block; filter: brightness(1.2); float: left; margin-left: 0;">    
+                <h1 class="sitename">NOVA <br>NGO</h1>
+              </a>
+        
+              <nav id="navmenu" class="navmenu">
+                <ul>
+                  <li><a href="/health_care/index.html" class="active">Home<br></a></li>
+                  <li><a href="/volunteer_Form/volunteer.html">Volunteer registration</a></li>
+                  <li><a href="#hero">Events</a></li>
+                  <li><a href="/courses_page/public/index.html">Courses</a></li>
+                  <li><a href="#services">Career</a></li>
+                  <li><a href="#contact">Video</a></li>
+                  <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+              </nav>
+        
+              <a class="btn-getstarted" href="index.html#about">Get Started</a>
+        
+            </div>
+          </header>
+        
+        <style>
+            
+        :root {
+          --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+          --heading-font: "Raleway",  sans-serif;
+          --nav-font: "Poppins",  sans-serif;
+        }
+        
+        /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+        :root { 
+          --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+          --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
+          --heading-color: #151515; /* Color for headings, subheadings and title throughout the website */
+          --accent-color: #ffc451; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+          --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+          --contrast-color: #312f2f; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+        }
+        
+        /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+        :root {
+          --nav-color: rgba(255, 255, 255, 0.905);  /* The default color of the main navmenu links */
+          --nav-hover-color: #ffc451; /* Applied to main navmenu links when they are hovered over or active */
+          --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+          --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+          --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+          --nav-dropdown-hover-color: #ffc451; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+        }
+        
+        /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+        
+        .light-background {
+          --background-color: #f9f9f9;
+          --surface-color: #ffffff;
+        }
+        
+        .dark-background {
+          --background-color: #060606;
+          --default-color: #ffffff;
+          --heading-color: #ffffff;
+          --surface-color: #252525;
+          --contrast-color: #2a2727;
+        }
+        
+        /* Smooth scroll */
+        :root {
+          scroll-behavior: smooth;
+        }
+        
+        /*--------------------------------------------------------------
+        # General Styling & Shared Classes
+        --------------------------------------------------------------*/
+        body {
+          color: var(--default-color);
+          background-color: var(--background-color);
+          font-family: var(--default-font);
+        }
+        
+        a {
+          color: var(--accent-color);
+          text-decoration: none;
+          transition: 0.3s;
+        }
+        
+        a:hover {
+          color: color-mix(in srgb, var(--accent-color), transparent 25%);
+          text-decoration: none;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: var(--heading-color);
+          font-family: var(--heading-font);
+        }
+        
+        
+        
+        /*--------------------------------------------------------------
+        # Global Header
+        --------------------------------------------------------------*/
+        .header {
+          --background-color: rgba(0, 0, 0, 0.8);
+          --heading-color: #ffffff;
+          --contrast-color: #ffffff;
+          color: var(--default-color);
+          background-color: var(--background-color);
+          padding: 2px 0;
+          transition: all 0.5s;
+          z-index: 997;
+        }
+        
+        .header .logo {
+          line-height: 1;
+        }
+        
+        .header .logo img {
+          max-height: 100px;
+          margin-right: 2px;
+        }
+        
+        .header .logo h1 {
+          font-size: 32px;
+          margin: 0;
+          font-weight: 700;
+          color: var(--heading-color);
+        }
+        
+        .header .logo span {
+          color: var(--accent-color);
+          font-size: 32px;
+        }
+        
+        .header .btn-getstarted,
+        .header .btn-getstarted:focus {
+          color: var(--contrast-color);
+          font-size: 14px;
+          padding: 8px 30px;
+          margin: 0 0 0 30px;
+          border-radius: 4px;
+          transition: 0.3s;
+          border: 2px solid var(--accent-color);
+        }
+        
+        .header .btn-getstarted:hover,
+        .header .btn-getstarted:focus:hover {
+          color: var(--default-color);
+          background: var(--accent-color);
+        }
+        
+        @media (max-width: 1200px) {
+          .header .logo {
+            order: 1;
+          }
+        
+          .header .btn-getstarted {
+            order: 2;
+            margin: 0 15px 0 0;
+            padding: 6px 15px;
+          }
+        
+          .header .navmenu {
+            order: 3;
+          }
+        }
+        
+        .scrolled .header {
+          box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Index Page Header
+        ------------------------------*/
+        .index-page .header {
+          --background-color: rgba(0, 0, 0, 0);
+        }
+        
+        /* Index Page Header on Scroll
+        ------------------------------*/
+        .index-page.scrolled .header {
+          --background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        /*--------------------------------------------------------------
+        # Navigation Menu
+        --------------------------------------------------------------*/
+        /* Navmenu - Desktop */
+        @media (min-width: 1200px) {
+          .navmenu {
+            padding: 0;
+          }
+        
+          .navmenu ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            align-items: center;
+          }
+        
+          .navmenu li {
+            position: relative;
+          }
+        
+          .navmenu a,
+          .navmenu a:focus {
+            color: var(--nav-color);
+            padding: 18px 15px;
+            font-size: 16px;
+            font-family: var(--nav-font);
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            white-space: nowrap;
+            transition: 0.3s;
+          }
+        
+          .navmenu a i,
+          .navmenu a:focus i {
+            font-size: 12px;
+            line-height: 0;
+            margin-left: 5px;
+            transition: 0.3s;
+          }
+        
+          .navmenu li:last-child a {
+            padding-right: 0;
+          }
+        
+          .navmenu li:hover>a,
+          .navmenu .active,
+          .navmenu .active:focus {
+            color: var(--nav-hover-color);
+          }
+        
+          .navmenu .dropdown ul {
+            margin: 0;
+            padding: 10px 0;
+            background: var(--nav-dropdown-background-color);
+            display: block;
+            position: absolute;
+            visibility: hidden;
+            left: 14px;
+            top: 130%;
+            opacity: 0;
+            transition: 0.3s;
+            border-radius: 0;
+            z-index: 99;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+          }
+        
+          .navmenu .dropdown ul li {
+            min-width: 200px;
+          }
+        
+          .navmenu .dropdown ul a {
+            padding: 10px 20px;
+            font-size: 15px;
+            text-transform: none;
+            color: var(--nav-dropdown-color);
+          }
+        
+          .navmenu .dropdown ul a i {
+            font-size: 12px;
+          }
+        
+          .navmenu .dropdown ul a:hover,
+          .navmenu .dropdown ul .active:hover,
+          .navmenu .dropdown ul li:hover>a {
+            background-color: var(--nav-dropdown-hover-color);
+          }
+        
+          .navmenu .dropdown:hover>ul {
+            opacity: 1;
+            top: 100%;
+            visibility: visible;
+          }
+        
+          .navmenu .dropdown .dropdown ul {
+            top: 0;
+            left: -90%;
+            visibility: hidden;
+          }
+        
+          .navmenu .dropdown .dropdown:hover>ul {
+            opacity: 1;
+            top: 0;
+            left: -100%;
+            visibility: visible;
+          }
+        }
+        
+        </style>
+
+        <section class="ticket-section section-padding">
+            <div class="section-overlay"></div>
+        
+            <div class="container">
+                <div class="row">
+        
+                    <div class="col-lg-6 col-10 mx-auto">
+                        <form class="custom-form ticket-form mb-5 mb-lg-0" action="#" method="post" role="form">
+                            <h2 class="text-center mb-4">Apply for Assistance</h2>
+                            <p class="text-center">Fill out the form below to request medical support from Nova NGO.</p>
+        
+                            <div class="ticket-form-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="full-name" id="full-name"
+                                            class="form-control" placeholder="Full Name" required>
+                                    </div>
+        
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="email" name="email" id="email"
+                                            pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address"
+                                            required>
+                                    </div>
+                                </div>
+        
+                                <input type="tel" class="form-control" name="phone"
+                                    placeholder="Phone (e.g., 987-654-3210)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        
+                                <h6>Select Assistance Type</h6>
+        
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-check form-control">
+                                            <input class="form-check-input" type="radio" name="assistanceType"
+                                                id="basicSupport" required>
+                                            <label class="form-check-label" for="basicSupport">
+                                                Basic Medical Support
+                                            </label>
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-check form-control">
+                                            <input class="form-check-input" type="radio" name="assistanceType"
+                                                id="financialAid" required>
+                                            <label class="form-check-label" for="financialAid">
+                                                Financial Assistance
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <input type="number" name="requested-amount" id="requested-amount"
+                                    class="form-control" placeholder="Requested Amount (if applicable)" min="0">
+        
+                                <textarea name="medical-condition" rows="3" class="form-control"
+                                    id="medical-condition" placeholder="Briefly describe your medical issue" required></textarea>
+        
+                                <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                    <button type="submit" class="form-control">Submit Request</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </section>
+        
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">NOVA NGO</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Artists</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Schedule</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Pricing</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            090-080-0760
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            hello@company.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        Silang Junction South, Tagaytay, Cavite, Philippines</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>Our Maps</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright © 2036 Festava Live Company</p>
+                        <p class="copyright-text">Distributed by: <a href="https://themewagon.com">ThemeWagon</a></p>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>

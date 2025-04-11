@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NOVA NGO ORGANISATION</title>
+    <link href="1_new%20home%20page/favicon.png" rel="icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background: url('image/Kalvarayan-Hills.jpg') no-repeat center center/cover;
+            backdrop-filter: blur(10px);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 60%;
+            max-width: 1100px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .required {
+            color: #ff6b6b;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            box-sizing: border-box;
+            height: 45px;
+        }
+
+        input::placeholder {
+            color: #bbb;
+        }
+
+        .time-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .time-buttons button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .time-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .submit-button {
+            background-color: #28a745;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #218838;
+        }
+
+        .skills-section label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills-section input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        input[type="date"], select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(1); /* Makes the calendar icon white */
+    }
+
+    select option {
+        background: #000;
+        color: #fff;
+    }
+
+    select option:checked {
+        background: #007bff;
+    }
+
+    /* Style for the calendar popup */
+    input[type="date"]::-webkit-datetime-edit {
+        color: #fff;
+    }
+    </style>
+</head>
+<body>
+
+    <style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.header {
+			display: flex;
+    		padding: 60px 10px;
+            height: 150px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+            transition: transform 0.4s ease-in-out;
+			margin: 1.5px;
+		}
+		.hidden {
+            transform: translateY(-100%);
+        }
+		.logo {
+			margin-right: auto;
+			display: flex;
+			align-items: center;
+		}
+		.logo img {
+			width: 150px; /* Increased size */
+			height: auto;
+			padding-top: 10px;
+			filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
+			animation: glow 1.5s infinite alternate;
+		}
+		@keyframes glow {
+			0% {
+				filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+			}
+			100% {
+				filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+			}
+		}
+		.header.hidden {
+			transform: translateY(-120px);
+		}
+	</style>
+    
+	<header class="header" id="header">
+		<div class="logo">
+			<a href="/home_page/index.html">
+                <img src="/favicon.png" alt="Logo">
+            </a>
+		</div>
+	</header>
+
+    <div class="container">
+        <h1>Volunteer Registration</h1>
+        <form action="volunteer.php" id="volunteerForm">
+            <label for="firstName">First Name <span class="required">*</span></label>
+            <input type="text" id="firstName" placeholder="Enter your first name" required>
+
+            <label for="lastName">Last Name <span class="required">*</span></label>
+            <input type="text" id="lastName" placeholder="Enter your last name" required>
+
+            <label for="email">E-mail <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="example@example.com" required>
+
+            <label>Birth Date <span class="required">*</span></label>
+            <div class="dob-fields">
+                <select required>
+                    <option value="" disabled selected>Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            
+                <select required>
+                    <option value="" disabled selected>Day</option>
+                    <!-- Days 1 to 31 -->
+                    <script>
+                        for (let i = 1; i <= 31; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+            
+                <select required>
+                    <option value="" disabled selected>Year</option>
+                    <!-- Years from 1900 to current year -->
+                    <script>
+                        const currentYear = new Date().getFullYear();
+                        for (let year = currentYear; year >= 1900; year--) {
+                            document.write(`<option value="${year}">${year}</option>`);
+                        }
+                    </script>
+                </select>
+                <!-- <script>
+                    const yearSelect = document.getElementById('year');
+                    const currentYer = new Date().getFullYear();
+
+                    // Add years from 1900 to the current year
+                    for (let year = currentYer; year >= 1900; year--) {
+                        const option = document.createElement('option');
+                        option.value = year;
+                        option.textContent = year;
+                        yearSelect.appendChild(option);
+                    }
+                </script> -->
+
+            </div>
+
+            <label for="phone">Phone Number <span class="required">*</span></label>
+<div style="display: flex; gap: 10px;">
+    <select id="countryCode" required>
+        <option value="" disabled selected>Code</option>
+        <option value="+91">India (+91)</option>
+    </select>
+    <input type="number" id="phone" placeholder="Enter phone number" 
+    pattern="[0-9]{10}" maxlength="10" required 
+    title="Please enter exactly 10 digits">
+</div>
+
+<script>
+    document.getElementById('volunteerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const countryCode = document.getElementById('countryCode').value;
+        const phoneNumber = document.getElementById('phone').value;
+        if (!countryCode) {
+            alert('Please select a country code.');
+        } else if (!phoneNumber) {
+            alert('Please enter your phone number.');
+        } else {
+            alert('Form submitted successfully!\nPhone Number: ' + countryCode + ' ' + phoneNumber);
+        }
+    });
+</script>
+
+<!-- I’ve added a bunch of country codes! Let me know if you want me to add more or refine the layout. 🌍 -->
+
+            
+            <!-- Now, users can select their country code and enter the phone number! Let me know if you want me to add more countries or tweak anything else. 🌍 -->
+            
+
+            <label>Address</label>
+            <input type="text" placeholder="Street Address">
+            <input type="text" placeholder="Street Address Line 2">
+            <input type="text" placeholder="City">
+            <input type="text" placeholder="State / Province">
+            <input type="number" placeholder="Postal / Zip Code">
+
+            <label for="appointmentDate">Preferred Appointment Date & Time<span class="required">*</span></label>
+            <div class="appointment-section">
+                <input type="date" id="appointmentDate" required>
+                <div class="time-buttons">
+                    <button type="button" onclick="selectTime('3:00 PM')">3:00 PM</button>
+                    <button type="button" onclick="selectTime('4:00 PM')">4:00 PM</button>
+                </div>
+            </div>
+
+            <label>Areas of Interest <span class="required">*</span></label>
+            <div class="skills-section" style="color: #fff;">
+                <label><input type="checkbox" name=""> Hospitals</label>
+                <label><input type="checkbox"> Orphanages</label>
+                <label><input type="checkbox"> Schools</label>
+                <label><input type="checkbox"> Community Services</label>
+                <label><input type="checkbox"> Computer Classes</label>
+                <label><input type="checkbox"> Arts & Entertainment</label>
+            </div>
+            <br>
+
+            <button type="submit" class="submit-button">Submit Form</button>
+        </form>
+    </div>
+
+    <script>
+        function selectTime(time) {
+            alert('Selected time: ' + time);
+        }
+
+        document.getElementById('volunteerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted successfully!');
+        });
+    </script>   
+
+<script>
+    document.getElementById('volunteerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let isValid = true;
+        let errorMessage = '';
+
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const countryCode = document.getElementById('countryCode').value;
+        const month = document.querySelector('.dob-fields select:nth-of-type(1)').value;
+        const day = document.querySelector('.dob-fields select:nth-of-type(2)').value;
+        const year = document.querySelector('.dob-fields select:nth-of-type(3)').value;
+        const dob = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+        const appointmentDate = document.getElementById('appointmentDate')?.value; // optional field
+        const checkboxes = document.querySelectorAll('.skills-section input[type="checkbox"]:checked');
+
+        // Address
+        const street = document.querySelector('input[placeholder="Street Address"]').value.trim();
+        const street2 = document.querySelector('input[placeholder="Street Address Line 2"]').value.trim();
+        const city = document.querySelector('input[placeholder="City"]').value.trim();
+        const state = document.querySelector('input[placeholder="State / Province"]').value.trim();
+        const postalCode = document.querySelector('input[placeholder="Postal / Zip Code"]').value.trim();
+
+        // Validation checks
+        if (!firstName) errorMessage += 'Please enter your first name.\n', isValid = false;
+        if (!lastName) errorMessage += 'Please enter your last name.\n', isValid = false;
+        if (!email) errorMessage += 'Please enter your email.\n', isValid = false;
+        if (!countryCode) errorMessage += 'Please select your country code.\n', isValid = false;
+        if (!phone) errorMessage += 'Please enter your phone number.\n', isValid = false;
+        if (!month || !day || !year) errorMessage += 'Please select your complete birth date.\n', isValid = false;
+        if (!appointmentDate) errorMessage += 'Please choose your preferred appointment date.\n', isValid = false;
+        if (checkboxes.length === 0) errorMessage += 'Please select at least one area of interest.\n', isValid = false;
+
+
+        const checkedInterests = [];
+        document.querySelectorAll('.skills-section input[type="checkbox"]:checked').forEach(cb => {
+            checkedInterests.push(cb.value); // Ensure checkbox has a 'value' attribute
+        });
+
+        // // Add to formData
+        // formData.append('interests', JSON.stringify(checkedInterests)); // Convert to JSON
+
+        if (isValid) {
+            // Get interests
+            const checkedInterests = [];
+            checkboxes.forEach(cb => {
+                checkedInterests.push(cb.parentElement.textContent.trim());
+            });
+
+            const formData = new FormData();
+            formData.append('firstName', firstName);
+            formData.append('lastName', lastName);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('countryCode', countryCode);
+            formData.append('dob', dob);
+            formData.append('appointmentDate', appointmentDate);
+            formData.append('street', street);
+            formData.append('street2', street2);
+            formData.append('city', city);
+            formData.append('state', state);
+            formData.append('postalCode', postalCode);
+            formData.append('interests', checkedInterests.join(', '));
+
+            fetch('volunteer.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.text())
+            .then(response => {
+                alert('✅ ' + response);
+                document.getElementById('volunteerForm').reset();
+            })
+            .catch(error => {
+                alert('❌ Error submitting form');
+                console.error(error);
+            });
+        } else {
+            alert('Form submission failed:\n' + errorMessage);
+        }
+    });
+</script>
+
+<!-- This code makes sure every required field is filled! Let me know if you want me to tweak the validation or add more checks. 🚀 -->
+
+</body>
+</html>
